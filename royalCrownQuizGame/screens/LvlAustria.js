@@ -203,7 +203,7 @@ const LvlAustria = ({navigation}) => {
                   color: '#000205',
                   borderWidth: 1,
                   borderColor: '#f5c65d',
-                  borderRadius: 3,
+                  borderRadius: 20,
                   color: '#f5c65d',
                   paddingLeft: 10,
                   paddingRight: 10,
@@ -225,7 +225,7 @@ const LvlAustria = ({navigation}) => {
                   color: '#000205',
                   borderWidth: 1,
                   borderColor: '#f5c65d',
-                  borderRadius: 3,
+                  borderRadius: 20,
                   color: '#f5c65d',
                   paddingLeft: 12,
                   paddingRight: 12,
@@ -245,7 +245,7 @@ const LvlAustria = ({navigation}) => {
                 color: '#000205',
                 borderWidth: 1,
                 borderColor: '#f5c65d',
-                borderRadius: 3,
+                borderRadius: 20,
                 color: '#f5c65d',
                 paddingLeft: 10,
                 paddingRight: 10,
@@ -364,7 +364,7 @@ const LvlAustria = ({navigation}) => {
                   height: 120,
                   borderWidth: 2,
                   borderColor: '#f5c65d',
-                  borderRadius: 3,
+                  borderRadius: 20,
                 }}>
                 <Text
                   style={{
@@ -404,7 +404,7 @@ const LvlAustria = ({navigation}) => {
                   height: 120,
                   borderWidth: 2,
                   borderColor: '#f5c65d',
-                  borderRadius: 3,
+                  borderRadius: 20,
                 }}>
                 <Text
                   style={{
@@ -448,7 +448,7 @@ const LvlAustria = ({navigation}) => {
               bottom: 15,
               right: 15,
               borderWidth: 1,
-              borderRadius: 3,
+              borderRadius: 20,
               height: 60,
               width: 60,
               justifyContent: 'center',

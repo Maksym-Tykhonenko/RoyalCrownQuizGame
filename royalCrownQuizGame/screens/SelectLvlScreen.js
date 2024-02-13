@@ -10,9 +10,7 @@ import {
 } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-
-const SelectLvlScreen = ({ navigation }) => {
-
+const SelectLvlScreen = ({navigation}) => {
   const [lvl2isAnlock, setLvl2isAnlock] = useState(false);
   const [lvl3isAnlock, setLvl3isAnlock] = useState(false);
   const [lvl4isAnlock, setLvl4isAnlock] = useState(false);
@@ -22,7 +20,7 @@ const SelectLvlScreen = ({ navigation }) => {
   const [lvl8isAnlock, setLvl8isAnlock] = useState(false);
   const [lvl9isAnlock, setLvl9isAnlock] = useState(false);
   const [lvl10isAnlock, setLvl10isAnlock] = useState(false);
-  
+
   console.log('lvl2isAnlock in SelectLvlScreen==>', lvl2isAnlock);
   console.log('lvl3isAnlock in SelectLvlScreen==>', lvl3isAnlock);
   console.log('lvl4isAnlock in SelectLvlScreen==>', lvl4isAnlock);
@@ -32,13 +30,11 @@ const SelectLvlScreen = ({ navigation }) => {
   console.log('lvl8isAnlock in SelectLvlScreen==>', lvl8isAnlock);
   console.log('lvl9isAnlock in SelectLvlScreen==>', lvl9isAnlock);
   console.log('lvl10isAnlock in SelectLvlScreen==>', lvl10isAnlock);
-  
 
-// 2lvl
+  // 2lvl
   useEffect(() => {
     getDataAbout2Lvl();
   }, []);
-
   const getDataAbout2Lvl = async () => {
     try {
       const jsonData = await AsyncStorage.getItem('LvlGermany');
@@ -46,7 +42,6 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl2isAnlock(parsedData.lvl2isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
@@ -54,7 +49,6 @@ const SelectLvlScreen = ({ navigation }) => {
   };
 
   // 3lvl
-  
   useEffect(() => {
     getDataAbout3Lvl();
   }, []);
@@ -65,7 +59,6 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl3isAnlock(parsedData.lvl3isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
@@ -83,14 +76,13 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl4isAnlock(parsedData.lvl4isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
     }
   };
 
-// 5lvl
+  // 5lvl
   useEffect(() => {
     getDataAbout5Lvl();
   }, []);
@@ -101,7 +93,6 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl5isAnlock(parsedData.lvl5isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
@@ -119,14 +110,13 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl6isAnlock(parsedData.lvl6isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
     }
   };
 
-// 7lvl
+  // 7lvl
   useEffect(() => {
     getDataAbout7Lvl();
   }, []);
@@ -137,7 +127,6 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl7isAnlock(parsedData.lvl7isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
@@ -155,16 +144,13 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl8isAnlock(parsedData.lvl8isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
     }
   };
 
-  
-
-// 9lvl
+  // 9lvl
   useEffect(() => {
     getDataAbout9Lvl();
   }, []);
@@ -175,7 +161,6 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl9isAnlock(parsedData.lvl9isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
@@ -193,180 +178,367 @@ const SelectLvlScreen = ({ navigation }) => {
         const parsedData = JSON.parse(jsonData);
         console.log('parsedData==>', parsedData);
         setLvl10isAnlock(parsedData.lvl10isAnlock);
-        
       }
     } catch (e) {
       console.log('Помилка отримання даних:', e);
     }
   };
-  {/** 
-*/}
-  
-
 
   return (
-    <View style={{ flex: 1, }}>
+    <View style={{flex: 1}}>
       <ImageBackground
         source={require('../assets/bgrQuiz.jpeg')}
-        style={{ flex: 1 }}>
-        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-                    
-          <SafeAreaView style={{ flex: 1 }}>
+        style={{flex: 1}}>
+        <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+          <SafeAreaView style={{flex: 1}}>
             <ScrollView>
-
               <TouchableOpacity
-                onPress={() => { navigation.navigate('LvlGermany') }}
-                style={{ flex: 1, alignItems: 'center', borderColor: '#f5c65d', borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
+                onPress={() => {
+                  navigation.navigate('LvlGermany');
+                }}
+                style={{
+                  flex: 1,
+                  alignItems: 'center',
+                  borderColor: '#f5c65d',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
+                }}>
                 <Image
                   source={require('../assets/prapor/german.jpeg')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{ color: '#f5c65d', fontSize: 22, fontWeight: '600' }}>Lvl 1 - Germany</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{color: '#f5c65d', fontSize: 22, fontWeight: '600'}}>
+                  Lvl 1 - Germany
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl2isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlFrance') }}
-                style={{borderColor: !lvl2isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center',  borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                onPress={() => {
+                  navigation.navigate('LvlFrance');
+                }}
+                style={{
+                  borderColor: !lvl2isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}>
                 <Image
                   source={require('../assets/prapor/france.webp')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{color: !lvl2isAnlock ? 'grey': '#f5c65d',
-                  fontSize: 22, fontWeight: '600'
-                }}>Lvl 2 - France</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl2isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 2 - France
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl3isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlAustria') }}
-                style={{ borderColor: !lvl3isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center', borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                onPress={() => {
+                  navigation.navigate('LvlAustria');
+                }}
+                style={{
+                  borderColor: !lvl3isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}>
                 <Image
                   source={require('../assets/prapor/austria.webp')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{color: !lvl3isAnlock ? 'grey': '#f5c65d',
-                  fontSize: 22, fontWeight: '600'
-                }}>Lvl 3 - Austria</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl3isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 3 - Austria
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl4isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlAustralia') }}
-                style={{borderColor: !lvl4isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center',  borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                onPress={() => {
+                  navigation.navigate('LvlAustralia');
+                }}
+                style={{
+                  borderColor: !lvl4isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}>
                 <Image
                   source={require('../assets/prapor/australia.jpeg')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{color: !lvl4isAnlock ? 'grey': '#f5c65d',
-                  fontSize: 22, fontWeight: '600'
-                }}>Lvl 4 - Australia</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl4isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 4 - Australia
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl5isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlCanada') }}
-                style={{borderColor: !lvl5isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center',  borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                onPress={() => {
+                  navigation.navigate('LvlCanada');
+                }}
+                style={{
+                  borderColor: !lvl5isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}>
                 <Image
                   source={require('../assets/prapor/canada.webp')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{color: !lvl5isAnlock ? 'grey': '#f5c65d',
-                   fontSize: 22, fontWeight: '600'
-                }}>Lvl 5 - Canada</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl5isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 5 - Canada
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl6isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlItaly') }}
-                style={{borderColor: !lvl6isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center',  borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                onPress={() => {
+                  navigation.navigate('LvlItaly');
+                }}
+                style={{
+                  borderColor: !lvl6isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}>
                 <Image
                   source={require('../assets/prapor/italy.jpeg')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{color: !lvl6isAnlock ? 'grey': '#f5c65d',
-                  fontSize: 22, fontWeight: '600'
-                }}>Lvl 6 - Italy</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl6isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 6 - Italy
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl7isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlUsa') }}
-                style={{ borderColor: !lvl7isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center', borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                onPress={() => {
+                  navigation.navigate('LvlUsa');
+                }}
+                style={{
+                  borderColor: !lvl7isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}>
                 <Image
                   source={require('../assets/prapor/USA.webp')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3
-                  }} />
-                <Text style={{color: !lvl7isAnlock ? 'grey': '#f5c65d',
-                   fontSize: 22, fontWeight: '600'
-                }}>Lvl 7 - USA</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl7isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 7 - USA
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl8isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlIndia') }}
-                style={{borderColor: !lvl8isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center',  borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                onPress={() => {
+                  navigation.navigate('LvlIndia');
+                }}
+                style={{
+                  borderColor: !lvl8isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}>
                 <Image
                   source={require('../assets/prapor/india.jpeg')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{color: !lvl8isAnlock ? 'grey': '#f5c65d',
-                   fontSize: 22, fontWeight: '600'
-                }}>Lvl 8 - India</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl8isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 8 - India
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl9isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlSpain') }}
-                style={{ borderColor: !lvl9isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center', borderWidth: 2, borderRadius: 3, marginBottom: 15, backgroundColor: 'rgba(0, 0, 0, 0.7)'
+                onPress={() => {
+                  navigation.navigate('LvlSpain');
+                }}
+                style={{
+                  borderColor: !lvl9isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
+                  marginBottom: 15,
+                  backgroundColor: 'rgba(0, 0, 0, 0.7)',
                 }}>
                 <Image
                   source={require('../assets/prapor/spain.jpeg')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{color: !lvl9isAnlock ? 'grey': '#f5c65d',
-                  fontSize: 22, fontWeight: '600'
-                }}>Lvl 9 - Spain</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl9isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 9 - Spain
+                </Text>
               </TouchableOpacity>
 
               <TouchableOpacity
                 disabled={!lvl10isAnlock ? true : false}
-                onPress={() => { navigation.navigate('LvlMaxica') }}
-                style={{borderColor: !lvl10isAnlock ? 'grey': '#f5c65d',
-                  flex: 1, alignItems: 'center',  borderWidth: 2, borderRadius: 3
+                onPress={() => {
+                  navigation.navigate('LvlMaxica');
+                }}
+                style={{
+                  borderColor: !lvl10isAnlock ? 'grey' : '#f5c65d',
+                  flex: 1,
+                  alignItems: 'center',
+                  borderWidth: 2,
+                  borderRadius: 20,
                 }}>
                 <Image
                   source={require('../assets/prapor/maxica.jpeg')}
-                  style={{ width: 300, height: 150, borderTopLeftRadius: 3, borderTopRightRadius: 3 }} />
-                <Text style={{color: !lvl10isAnlock ? 'grey': '#f5c65d',
-                   fontSize: 22, fontWeight: '600'
-                }}>Lvl 10 - Mexica</Text>
+                  style={{
+                    width: 300,
+                    height: 150,
+                    borderTopLeftRadius: 20,
+                    borderTopRightRadius: 20,
+                  }}
+                />
+                <Text
+                  style={{
+                    color: !lvl10isAnlock ? 'grey' : '#f5c65d',
+                    fontSize: 22,
+                    fontWeight: '600',
+                  }}>
+                  Lvl 10 - Mexica
+                </Text>
               </TouchableOpacity>
-
             </ScrollView>
-
-            
-                            
           </SafeAreaView>
           {/**Go Back BTN */}
           <TouchableOpacity
-            onPress={() => { navigation.goBack() }}
-            style={{ position: 'absolute', bottom: 15, right: 15, borderWidth: 3, borderRadius: 3, height: 60, width: 60, justifyContent: "center", alignItems: "center", borderColor: '#f5c65d', backgroundColor: 'rgba(0, 0, 0, 0.7)' }}>
-            <Text style={{ color: '#f5c65d', fontWeight: '600' }}>Go</Text>
-            <Text style={{ color: '#f5c65d', fontWeight: '600' }}>back</Text>
+            onPress={() => {
+              navigation.goBack();
+            }}
+            style={{
+              position: 'absolute',
+              bottom: 15,
+              right: 15,
+              borderWidth: 3,
+              borderRadius: 20,
+              height: 60,
+              width: 60,
+              justifyContent: 'center',
+              alignItems: 'center',
+              borderColor: '#f5c65d',
+              backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            }}>
+            <Text style={{color: '#f5c65d', fontWeight: '600'}}>Go</Text>
+            <Text style={{color: '#f5c65d', fontWeight: '600'}}>back</Text>
           </TouchableOpacity>
         </View>
-                
       </ImageBackground>
-                
-      
     </View>
   );
 };

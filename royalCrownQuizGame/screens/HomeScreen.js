@@ -102,7 +102,7 @@ const HomeScreen = ({navigation}) => {
                 }}
                 style={{
                   borderWidth: 3,
-                  borderRadius: 3,
+                  borderRadius: 20,
                   paddingHorizontal: 20,
                   marginHorizontal: 7,
                   height: 50,
@@ -126,7 +126,7 @@ const HomeScreen = ({navigation}) => {
                 }}
                 style={{
                   borderWidth: 3,
-                  borderRadius: 3,
+                  borderRadius: 20,
                   paddingHorizontal: 20,
                   marginHorizontal: 7,
                   height: 50,
