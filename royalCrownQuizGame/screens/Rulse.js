@@ -13,7 +13,7 @@ const RulesScreen = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
       <ImageBackground
-        source={require('../assets/bgrQuiz.jpeg')}
+        source={require('../assets/bgrRulse.jpg')}
         style={{flex: 1}}>
         <View
           style={{

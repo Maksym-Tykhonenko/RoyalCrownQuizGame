@@ -37,7 +37,7 @@ const HomeScreen = ({navigation}) => {
     return (
       <View style={{position: 'relative', flex: 1}}>
         <Animated.Image
-          source={require('../assets/bgrQuiz.jpeg')}
+          source={require('../assets/bgrHomeP.jpg')}
           style={{
             ...props.style,
             opacity: fadeAnim,
@@ -56,14 +56,16 @@ const HomeScreen = ({navigation}) => {
             opacity: appearingAnim,
           }}>
           <Animated.View
-            style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+            style={{
+              flex: 1,
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginTop: 60,
+              marginLeft: 40,
+            }}>
             <Animated.Text
               style={{color: '#f5c65d', fontSize: 60, fontWeight: 'bold'}}>
-              HELLO!!!
-            </Animated.Text>
-            <Animated.Text
-              style={{color: '#f5c65d', fontSize: 60, fontWeight: 'bold'}}>
-              I`TS QUIZ
+              I`TS A
             </Animated.Text>
             <Animated.Text
               style={{color: '#f5c65d', fontSize: 60, fontWeight: 'bold'}}>
@@ -86,7 +88,7 @@ const HomeScreen = ({navigation}) => {
           }}></ChangeInView>
       ) : (
         <ImageBackground
-          source={require('../assets/bgrQuiz.jpeg')}
+          source={require('../assets/bgrHomeP.jpg')}
           style={{flex: 1}}>
           <View
             style={{
@@ -105,7 +107,7 @@ const HomeScreen = ({navigation}) => {
                   borderRadius: 20,
                   paddingHorizontal: 20,
                   marginHorizontal: 7,
-                  height: 50,
+                  height: 70,
                   width: 250,
                   justifyContent: 'center',
                   alignItems: 'center',
@@ -129,7 +131,7 @@ const HomeScreen = ({navigation}) => {
                   borderRadius: 20,
                   paddingHorizontal: 20,
                   marginHorizontal: 7,
-                  height: 50,
+                  height: 70,
                   width: 250,
                   justifyContent: 'center',
                   alignItems: 'center',

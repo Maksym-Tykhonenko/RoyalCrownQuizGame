@@ -187,10 +187,17 @@ const SelectLvlScreen = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
       <ImageBackground
-        source={require('../assets/bgrQuiz.jpeg')}
+        source={require('../assets/bgrSelect.jpg')}
         style={{flex: 1}}>
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
           <SafeAreaView style={{flex: 1}}>
+            <View style={{alignItems: 'center', marginBottom: 10}}>
+              <Image
+                style={{width: 80}}
+                source={require('../assets/logo.png')}
+              />
+            </View>
+
             <ScrollView>
               <TouchableOpacity
                 onPress={() => {

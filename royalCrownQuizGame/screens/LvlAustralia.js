@@ -184,7 +184,7 @@ const LvlAustralia = ({navigation}) => {
   return (
     <View style={{flex: 1}}>
       <ImageBackground
-        source={require('../assets/bgrQuiz.jpeg')}
+        source={require('../assets/bgrSelect.jpg')}
         style={{flex: 1}}>
         <SafeAreaView
           style={{
