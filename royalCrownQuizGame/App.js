@@ -1,8 +1,11 @@
+import 'react-native-gesture-handler';
 import React, {useState, useEffect, useRef} from 'react';
 import {ImageBackground, Text, View, Image, Animated} from 'react-native';
 import {LogBox} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+//import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
+
 import ReactNativeIdfaAaid, {
   AdvertisingInfoResponse,
 } from '@sparkfabrik/react-native-idfa-aaid';
@@ -25,7 +28,8 @@ import LvlSpain from './screens/LvlSpain';
 import LvlMaxica from './screens/LvlMexica';
 import ProductScreen from './screens/ProductScreen';
 
-const Stack = createNativeStackNavigator();
+//const Stack = createNativeStackNavigator();
+const Stack = createStackNavigator();
 
 const App = () => {
   //LogBox.ignoreLogs(['RCTBridge required dispatch_sync']);
@@ -133,7 +137,7 @@ const App = () => {
   //////////// useEffect що виріш який шлях включати
   useEffect(() => {
     const checkUrl = `https://impressive-crown-delight.space/6MzSqGTp`;
-    const targetData = new Date('2024-02-20T12:00:00'); //дата з якої поч працювати prod
+    const targetData = new Date('2024-02-23T12:00:00'); //дата з якої поч працювати prod
     const currentData = new Date(); //текущая дата
 
     if (currentData <= targetData) {
@@ -232,7 +236,10 @@ const App = () => {
             initialParams={{idfa: idfa}}
             name="ProductScreen"
             component={ProductScreen}
-            options={{headerShown: false}}
+            options={{
+              presentation: 'card',
+              headerShown: false,
+            }}
           />
         </Stack.Navigator>
       );

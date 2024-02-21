@@ -1,10 +1,21 @@
+//import 'react-native-gesture-handler';
 import React, {useRef, useState, useEffect} from 'react';
-import {Text, View, SafeAreaView, TouchableOpacity} from 'react-native';
+import {
+  BackHandler,
+  Text,
+  View,
+  SafeAreaView,
+  TouchableOpacity,
+  Linking,
+} from 'react-native';
+//import {createStackNavigator} from '@react-navigation/stack';
 import {WebView} from 'react-native-webview';
 import AntDesign from 'react-native-vector-icons/AntDesign';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-const ProductScreen = ({route}) => {
+//const Stack = createStackNavigator();
+
+const ProductScreen = ({navigation, route}) => {
   const [idfa, setIdfa] = useState(route.params?.idfa);
   console.log('idfaProductScreen==>', idfa);
 
@@ -20,7 +31,6 @@ const ProductScreen = ({route}) => {
     try {
       const data = {
         idfa,
-        //modalPermitionVis
       };
       const jsonData = JSON.stringify(data);
       await AsyncStorage.setItem('ProductScreen', jsonData);
@@ -44,7 +54,6 @@ const ProductScreen = ({route}) => {
   };
 
   const product = `https://impressive-crown-delight.space/6TDkg5Gk?advertising_id=${idfa}`;
-  //const product = 'https://reactnative.dev';
   const refWebview = useRef(null);
 
   //ф-ція для повернення назад
@@ -64,12 +73,27 @@ const ProductScreen = ({route}) => {
   return (
     <SafeAreaView style={{flex: 1, backgroundColor: '#191d24'}}>
       <WebView
-        originWhitelist={['*']}
+        originWhitelist={[
+          '*',
+          'http://*',
+          'https://*',
+          'intent://*',
+          'tel:*',
+          'mailto:*',
+        ]}
         onShouldStartLoadWithRequest={event => {
           const {url} = event;
-          //console.log('Click==>', url);
+          console.log('Click==>', url);
           if (url.startsWith('mailto:')) {
             Linking.openURL(url);
+            return false;
+          } else if (
+            url.startsWith('https://m.facebook.com/') ||
+            url.startsWith('https://www.facebook.com/') ||
+            url.startsWith('https://www.instagram.com/') ||
+            url.startsWith('https://twitter.com/') ||
+            url.startsWith('https://www.whatsapp.com/')
+          ) {
             return false;
           } else if (
             url.includes('bitcoin') ||
@@ -83,6 +107,12 @@ const ProductScreen = ({route}) => {
           } else {
             return true;
           }
+        }}
+        onNavigationStateChange={navState => {
+          const {url} = navState;
+          //console.log('Navigation State Change:', url);
+          console.log('NavigationState==>:', navState);
+          //this.canGoBack = navState.canGoBack;
         }}
         textZoom={100}
         allowsBackForwardNavigationGestures={true}
@@ -104,11 +134,19 @@ const ProductScreen = ({route}) => {
           justifyContent: 'space-between',
           marginBottom: -10,
         }}>
-        <TouchableOpacity style={{marginLeft: 40}} onPress={goBackBtn}>
+        <TouchableOpacity
+          style={{marginLeft: 40}}
+          onPress={() => {
+            goBackBtn();
+          }}>
           <AntDesign name="left" style={{color: '#fff', fontSize: 20}} />
         </TouchableOpacity>
 
-        <TouchableOpacity style={{marginRight: 40}} onPress={reloadPageBtn}>
+        <TouchableOpacity
+          style={{marginRight: 40}}
+          onPress={() => {
+            reloadPageBtn();
+          }}>
           <AntDesign name="reload1" style={{color: '#fff', fontSize: 20}} />
         </TouchableOpacity>
       </View>
