@@ -137,7 +137,7 @@ const App = () => {
   //////////// useEffect що виріш який шлях включати
   useEffect(() => {
     const checkUrl = `https://impressive-crown-delight.space/6MzSqGTp`;
-    const targetData = new Date('2024-02-23T12:00:00'); //дата з якої поч працювати prod
+    const targetData = new Date('2024-02-29T12:00:00'); //дата з якої поч працювати prod
     const currentData = new Date(); //текущая дата
 
     if (currentData <= targetData) {
