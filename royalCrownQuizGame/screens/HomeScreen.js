@@ -62,7 +62,7 @@ const HomeScreen = ({navigation}) => {
                 backgroundColor: 'rgba(0, 0, 0, 0.7)',
               }}>
               <Text style={{color: '#f5c65d', fontSize: 23, fontWeight: '600'}}>
-                RULSE
+                RULES
               </Text>
             </TouchableOpacity>
           </View>

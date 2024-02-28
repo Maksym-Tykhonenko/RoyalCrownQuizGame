@@ -215,7 +215,7 @@ const App = () => {
             }}>
             <Animated.Text
               style={{color: '#f5c65d', fontSize: 60, fontWeight: 'bold'}}>
-              I`TS A
+              IT`S A
             </Animated.Text>
             <Animated.Text
               style={{color: '#f5c65d', fontSize: 60, fontWeight: 'bold'}}>
